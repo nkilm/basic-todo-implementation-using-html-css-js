@@ -22,7 +22,7 @@ const table = document.querySelector("#table");
 const container = document.querySelector(".container")
 
 if (!document.querySelector(".todo-list tr")) {
-    table.style.display="none";
+    table.style.display = "none";
     const todoEmptyMsg = myCreateElementText("h2", "Your To-do list is Empty!🐌");
     todoEmptyMsg.classList.add("to-center");
     container.append(todoEmptyMsg);
@@ -38,16 +38,16 @@ inputForm.addEventListener("submit", (e) => {
         alert("Todo cannot be Empty!");
     } else {
 
-        if(container.querySelector("h2")){
+        if (container.querySelector("h2")) {
             container.querySelector("h2").remove();
         }
 
-        table.style.display="block"; // restore
-        
+        table.style.display = "block"; // restore
+
         const newTodo = document.createElement("tr");
-        
+
         newTodo.innerHTML =
-        `
+            `
         <td>${todoInput.value}</td>
         <td>
         <button class="btn btn-done">Done</button>
@@ -55,7 +55,34 @@ inputForm.addEventListener("submit", (e) => {
         </td>
         `
         newTodo.classList.add("todo");
-        todoInput.value="";
+        todoInput.value = "";
         todoList.append(newTodo);
     }
 })
+
+
+// done and remove 
+// adding event listener to tbody -- an example for event delegation
+
+todoList.addEventListener("click", (e) => {
+    // console.log(e.target); // return the element where the event was seen/captured
+    if (e.target.classList.contains("btn-done")) {
+        const todoNode = e.target.parentNode.previousElementSibling;
+        todoNode.style.textDecorationLine = "line-through";
+    }
+    if (e.target.classList.contains("btn-remove")) {
+        const parentNodeOfTodo = e.target.parentNode.parentNode;
+        parentNodeOfTodo.remove();
+
+        if (!document.querySelector(".todo-list tr")) {
+            table.style.display = "none";
+            const todoEmptyMsg = myCreateElementText("h2", "Your To-do list is Empty!🐌");
+            todoEmptyMsg.classList.add("to-center");
+            container.append(todoEmptyMsg);
+        }
+    }
+})
+
+
+
+

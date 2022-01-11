@@ -12,7 +12,8 @@ html {
 }
 
 .container {
-    /* background-color: #; */
+    height: 90vh;
+    /* border: 2px solid red; */
     font-size: 1.6rem;
     padding: 4rem;
 }
@@ -36,8 +37,9 @@ html {
 }
 
 .fix-size{
-    padding: 1.2rem 21rem;
-    margin-right: 0.8rem;
+    font-size: 1.6rem;
+    padding: 1.2rem 22rem 1.2rem 4rem;
+    margin-right: 1rem;
 }
 
 .input-form #todoinput:focus {
