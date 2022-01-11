@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Todo</title>
+    <link rel="stylesheet" href="./todo.css">
+    <script src="./todo.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <center><h1>Get your tasks done with Todo!</h1></center>
+            
+            <div class="input-form to-center">
+                <form id="input-form">
+                    <input type="text" class="fix-size" name="todoinput" id="todoinput" placeholder="Add Your To-Do...">
+                    <!-- <button class="btn btn-add">Add!</button> -->
+                    <input type="submit" value="Add!" class="btn btn-add">
+                </form>
+            </div>
+
+            <!-- display all todo  -->
+            <!-- <ul id="list-of-all-todo" class="todo-list">
+            </ul> -->
+            <div class="sub-container to-center">
+                <table id="table">
+                    <thead class="table-head">
+                        <tr>
+                            <th>Description</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody class="todo-list">
+    
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </header>
+    <footer>
+        <h4 class="to-center footer" style="font-size:1.6rem">Made with 💖 by Nikhil</h4>
+    </footer>
+</body>
+</html>
